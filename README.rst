@@ -54,6 +54,31 @@ For some vehicles, it is also possible to manage:
 This package has been developed to be used with Home-Assistant, but it can be used in other contexts
 
 
+Experimental Mitsubishi client
+-------------------------------
+
+This fork also contains an experimental, asynchronous client for the current
+Mitsubishi Motors connected-car service. It lives in ``src/mitsubishi_api`` and
+is independent of the Renault implementation.
+
+The Mitsubishi client is deliberately **read-only**. It currently covers:
+
+* vehicle list and vehicle status
+* battery/charge details and charging history
+* mileage history
+* climate status and schedules
+* vehicle location and available connected services
+
+Authentication is not yet complete. The client accepts an existing short-lived
+access token while the official application's token lifecycle and exact request
+schemas are validated. Remote operations such as charging, climate control,
+horn, lights, locks, and vehicle wake-up are intentionally excluded.
+
+See `MITSUBISHI.md <MITSUBISHI.md>`_ for current usage, limitations, and privacy
+requirements. Never commit account credentials, access tokens, VINs, precise
+locations, APK files, or unredacted API responses.
+
+
 Requirements
 ------------
 
